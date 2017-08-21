@@ -34,9 +34,11 @@ using UnityEngine.SceneManagement;
 	// Collision Detection
 	void OnTriggerEnter2D (Collider2D col) {
 	
-        if (col.tag == ColorChanger)
+        if (col.tag == "ColorChanger")
         {
             RandomColor();
+            Destroy(col.gameObject);
+            return;
         }
 		if (col.tag != currentColor) {
 		
